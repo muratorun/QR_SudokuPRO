@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Redirect</title>
+    <script>
+        // Kullanıcının cihazını algılama
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/android/i.test(userAgent)) {
+            // Android cihazlar için yönlendirme
+            window.location.href = "https://play.google.com/store/apps/details?id=com.catikatibilisim.sudoku_pro.sudoku_pro&pli=1";
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // iOS cihazlar için yönlendirme
+            window.location.href = "https://apps.apple.com/tr/app/sudoku-pro/id6466501273?l=tr";
+        } else {
+            // Diğer cihazlar için yönlendirme
+            window.location.href = "https://www.instagram.com/catikatibilisim/";
+        }
+    </script>
+</head>
+<body>
+    <h1>Yönlendirme Yapılıyor...</h1>
+    <p>Eğer otomatik olarak yönlendirilmediyseniz, lütfen bağlantıya tıklayın:</p>
+    <ul>
+        <li><a href="https://play.google.com/store/apps/details?id=com.catikatibilisim.sudoku_pro.sudoku_pro&pli=1">Android</a></li>
+        <li><a href="https://apps.apple.com/tr/app/sudoku-pro/id6466501273?l=tr">iOS</a></li>
+        <li><a href="https://www.instagram.com/catikatibilisim/">Web için</a></li>
+    </ul>
+</body>
+</html>
